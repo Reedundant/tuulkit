@@ -1,9 +1,17 @@
 class BookingsController < ApplicationController
   def index
     @bookings = Booking.all
+    @tools = Tool.all
   end
 
+  # def show
+  #   @tool = Tool.find(params[:tool_id])
+  #   @booking = Booking.find(params[:id])
+  #   @booking.tool = @booking
+  # end
+
   def new
+    @tool = Tool.find(params[:tool_id])
     @booking = Booking.new
   end
 
@@ -17,11 +25,6 @@ class BookingsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
-  end
-
-  def show
-    @booking = Booking.find(params[:id])
-    # @took = Tool.find(params[:id])
   end
 
   def destroy
