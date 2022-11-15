@@ -13,21 +13,23 @@ User.destroy_all
 puts "Generating users..."
 
 user1 = User.create(
+  name: "Jack Torrance",
   email: "jacktorrance@gmail.com",
   password: '123456'
 )
 
 user2 = User.create(
+  name: "Caillou Anderson",
   email: "caillouanderson@gmail.com",
   password: "123456"
 )
 
-puts user1, user2
+pp user1, user2
 puts "Done generating users!"
 
 # Tool
-# puts "Destroying all tools..."
-# Tool.destroy_all
-# puts "Generating tools..."
+puts "Destroying all tools..."
+Tool.destroy_all
+puts "Generating tools..."
 
 # name, type, price, description, location
