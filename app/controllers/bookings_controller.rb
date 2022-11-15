@@ -2,6 +2,9 @@ class BookingsController < ApplicationController
   def index
     @bookings = Booking.all
     @tools = Tool.all
+
+    @tool = Tool.find(params[:tool_id]) # find unique tool
+    @booking.tool = @booking
   end
 
   # def show
