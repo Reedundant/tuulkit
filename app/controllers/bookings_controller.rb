@@ -7,9 +7,21 @@ class BookingsController < ApplicationController
     @booking = Booking.new
   end
 
+  def create
+    @tool = Tool.find(params[:tool_id]) # find unique tool
+    @booking = Booking.new(booking_param)
+    @booking.tool = @booking
+
+    if @booking.save
+      redirect_to bookings_path(@tool)
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
   def show
     @booking = Booking.find(params[:id])
-    @took = Tool.find(params[:id])
+    # @took = Tool.find(params[:id])
   end
 
   def destroy
