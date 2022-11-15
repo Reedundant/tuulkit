@@ -6,4 +6,10 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   resources :tools
+  resources :bookings
+
+  # To generate nested paths
+  resources :tools do
+    resources :bookings
+  end
 end
