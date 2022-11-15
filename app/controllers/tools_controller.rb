@@ -7,12 +7,12 @@ class ToolsController < ApplicationController
     @tools = Tool.all
   end
   #GET
-  def show
-  end
+  # def show
+  # end
 #   #GET
-#   def new
-#     @tool = Tool.new
-#   end
+  def new
+    @tool = Tool.new
+  end
 #   #POST
 #   def create
 #     @tool = Tool.new(tool_params)
