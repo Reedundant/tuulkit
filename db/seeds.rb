@@ -5,13 +5,18 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-require 'faker'
+puts "Destroying all bookings..."
+Booking.destroy_all
 
-# User -------------------------------
+puts "Destroying all tools..."
+Tool.destroy_all
+
 puts "Destroying all users..."
 User.destroy_all
-puts "Generating users..."
 
+# User -------------------------------
+
+puts "Generating users..."
 user1 = User.create(
   email: "jacktorrance@gmail.com",
   password: '123456'
@@ -26,12 +31,10 @@ pp user1, user2
 puts "Done generating users!"
 
 # Tool -------------------------------
-puts "Destroying all tools..."
-Tool.destroy_all
 puts "Generating tools..."
 
 # https://www.lowes.ca/product/power-sanders/craftsman-120-volt-2-amps-corded-sheet-sander-1061196
-tool_1 = Tool.create(
+tool1 = Tool.create(
   name: "CRAFTSMAN 120-Volt 2-Amps Corded Sheet Sander",
   tool_type: "Power Tools",
   price: 40.50,
@@ -41,7 +44,7 @@ tool_1 = Tool.create(
 )
 
 # https://www.lowes.ca/product/air-inflators/craftsman-12-volt-and-120-volt-120-volt-lithium-ion-li-ion-air-inflator-power-source-battery-car-electric-1033802
-tool_2 = Tool.create(
+tool2 = Tool.create(
   name: "CRAFTSMAN 12-Volt and 120-Volt / 120-Volt Lithium ion (Li-ion) Air Inflator (Power Source: Battery; Car; Electric)",
   tool_type: "Air Tools",
   price: 55.00,
@@ -51,7 +54,7 @@ tool_2 = Tool.create(
 )
 
 # https://www.lowes.ca/product/multi-tools/hvtools-snap-ring-plier-set-330060138
-tool_3 = Tool.create(
+tool3 = Tool.create(
   name: "HVTools Snap Ring Plier Set",
   tool_type: "Hand Tools",
   price: 20.00,
@@ -61,7 +64,7 @@ tool_3 = Tool.create(
 )
 
 # https://www.lowes.ca/product/mechanics-tool-sets/craftsman-gun-metal-81-piece-standard-sae-mechanics-tool-set-with-hard-997803
-tool_4 = Tool.create(
+tool4 = Tool.create(
   name: "CRAFTSMAN GUN METAL 81-Piece Standard (SAE) Mechanic's Tool Set with Hard",
   tool_type: "Hand Tools",
   price: 70.00,
@@ -71,7 +74,7 @@ tool_4 = Tool.create(
 )
 
 # https://www.lowes.ca/product/welders-cutters/lincoln-electric-ac225-stick-welder-240v-225a-330853938
-tool_5 = Tool.create!(
+tool5 = Tool.create(
   name: "Lincoln Electric AC225 Stick Welder 240V 225A",
   tool_type: "Welding & Soldering",
   price: 100.00,
@@ -80,7 +83,28 @@ tool_5 = Tool.create!(
   user: user2
 )
 
-pp tool_1, tool_2, tool_3, tool_4, tool_5
 puts "Done generating tools"
-
+pp tool1, tool2, tool3, tool4, tool5
 # name, tool_type, price, description, location
+
+# Booking -------------------------------
+puts "Generating bookings..."
+
+booking1 = Booking.create(
+  user: user2,
+  tool: tool3,
+  status: 0,
+  starting_date: Date.new(2022, 11, 18),
+  end_date: Date.new(2022, 11, 22)
+)
+
+booking2 = Booking.create(
+  user: user1,
+  tool: tool5,
+  status: 0,
+  starting_date: Date.new(2022, 12, 5),
+  end_date: Date.new(2022, 12, 12)
+)
+
+puts "Done generating bookings"
+pp booking1, booking2
