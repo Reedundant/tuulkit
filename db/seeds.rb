@@ -106,5 +106,21 @@ booking2 = Booking.create(
   end_date: Date.new(2022, 12, 12)
 )
 
+booking3 = Booking.create(
+  user: user1,
+  tool: tool4,
+  status: 0,
+  starting_date: Date.new(2022, 11, 17),
+  end_date: Date.new(2022, 11, 21)
+)
+
+booking4 = Booking.create(
+  user: user2,
+  tool: tool2,
+  status: 0,
+  starting_date: Date.new(2022, 12, 7),
+  end_date: Date.new(2022, 12, 14)
+)
+
 puts "Done generating bookings"
-pp booking1, booking2
+pp booking1, booking2, booking3, booking4
