@@ -8,4 +8,19 @@
 
 # User
 
+puts "Destroying all users..."
+
+User.destroy_all
+puts "Generating users..."
+
+2.times do
+  user = User.create(
+    email: Faker::Internet.email #=> "kirsten.greenholt@corkeryfisher.info"
+  )
+
+  puts user.email
+  pp user
+end
+
+
 # Tool
