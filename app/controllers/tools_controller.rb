@@ -7,8 +7,9 @@ class ToolsController < ApplicationController
     @tools = Tool.all
   end
   #GET
-  # def show
-  # end
+  def show
+    @tool = Tool.find(params[:id])
+  end
 #   #GET
   def new
     @tool = Tool.new
