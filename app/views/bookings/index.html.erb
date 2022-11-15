@@ -1,7 +1,7 @@
-<h1>🧰 Your Toolbox</h1>
+<h1>Your pending tools...</h1>
 
 <ul>
   <% @bookings.each do |b| %>
-    <li><%= b.starting_date %></li>
+    <li><%= link_to b.starting_date, booking_path(b) %></li>
   <% end %>
 </ul>
