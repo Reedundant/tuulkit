@@ -23,18 +23,17 @@
       <ul class="navbar-nav me-auto">
           <li class="nav-item active">
             <a class="nav-link" href="#">Tools</a>
-            <a class="nav-link" href="#">Sign up</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Messages</a>
+            <a class="nav-link" href="#">Booking</a>
           </li>
           <li class="nav-item dropdown">
             <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" data-turbo-method="delete" href="#">Log out</a>
-            </div>
+            <div class="dropdown-menu dropdown-menu-end show" aria-labelledby="navbarDropdown" data-bs-popper="static">
+            <a class="dropdown-item" href="#">View profile</a>
+            <a class="dropdown-item" href="#">Edit profile</a>
+            <a data-turbo-method="delete" class="dropdown-item" href="/users/sign_out">Log out</a>
+          </div>
           </li>
           <!--li class="nav-item"-->
           <!--/li-->
