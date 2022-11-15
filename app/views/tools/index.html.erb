@@ -3,7 +3,7 @@
 <ul>
   <% @tools.each do |list|%>
   <li>
-    <%= list %>
+    <%=link_to list.name, tool_path(list) %>
   </li>
   <% end %>
 </ul>
