@@ -7,22 +7,23 @@ class ToolsController < ApplicationController
     @tools = Tool.all
   end
   #GET
-  # def show
-  # end
+  def show
+    @tool = Tool.find(params[:id])
+  end
 #   #GET
   def new
     @tool = Tool.new
   end
 #   #POST
-#   def create
-#     @tool = Tool.new(tool_params)
+  # def create
+  #   @tool = Tool.new(tool_params)
 
-#     if @tool.save
-#       redirect_to @tool, notice: "Your tool was successfully added!"
-#     else
-#       render :new, status: :unprocessable_entity
-#     end
-#   end
+  #   if @tool.save
+  #     redirect_to @tool, notice: "Your tool was successfully added!"
+  #   else
+  #     render :new, status: :unprocessable_entity
+  #   end
+  # end
 #   #GET
 #   def edit
 #   end
