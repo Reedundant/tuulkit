@@ -1,4 +1,19 @@
-<h1>Your requested tools to rent...</h1>
+<%# 🪝 I can see whether my request is approved or not %>
+<h1><%= @tool.name %></h1>
 
-<p>Starting Date: <%= @booking.starting_date %></p>
-<p>End Date: <%= @booking.end_date %></p>
+<h2>$<%= @tool.price %> <span style="font-size: 1rem; color: gray;">/ per day</span></h2>
+
+<ul class="list-unstyled">
+  <li>Category: <%= @tool.tool_type %></li>
+  <li>Description: <%= @tool.description %></li>
+  <li>Location: <%= @tool.location %></li>
+</ul>
+
+<h3>Request</h3>
+<ul class="list-unstyled">
+  <li>Start date: <%= @booking.starting_date %></li>
+  <li>End date: <%= @booking.end_date %></li>
+</ul>
+
+<h3>Status</h3>
+<p style="color: gray;">Pending</p>
