@@ -1,12 +1,14 @@
 .card-category {
   background-size: cover;
   background-position: center;
-  height: 180px;
+  width: 150px;
+  height: 200px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   color: white;
-  font-size: 24px;
+  font-size: 12px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
@@ -16,8 +18,17 @@
 
 .card-holder {
 width: 100%;
-padding: 15px;
-overflow-x: scroll;
+padding: 10px;
 display: flex;
+overflow-x: scroll;
+// align-content: space-between;
+}
 
+.card-info {
+font-size: 15px;
+padding: 10px;
+}
+
+.card-info ul {
+padding-left: 12px;
 }
