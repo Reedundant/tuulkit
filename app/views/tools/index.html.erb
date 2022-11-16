@@ -4,6 +4,9 @@
   <% @tools.each do |list|%>
   <li>
     <%=link_to list.name, tool_path(list) %>
+
+    <%# Link to request to book a tool %>
+    <%= link_to "Book this tool",  new_tool_booking_path(list), {:style=>'color: gray; padding-left: 1rem;'}%>
   </li>
   <% end %>
 </ul>
