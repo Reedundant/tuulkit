@@ -2,9 +2,12 @@
 <%= @tool.description %>
 
 
-<p><%= link_to "Edit this restaurant", edit_restaurant_path(@restaurant) %>
 <p><%= link_to "Back to tools", tools_path %></p>
 
 <p><%= link_to "Delete tool", @tool, method: :delete %></p>
 
 <p><%= link_to "Edit tool details", edit_tool_path(@tool) %></p>
+
+
+<%# Link to request to book a tool %>
+<%= link_to "Book this tool",  new_tool_booking_path(@tool), {:style=>'color: gray;'}%>
