@@ -1,28 +1,30 @@
 class ToolsController < ApplicationController
-  before_action :set_tool, only: %[ show edit update destroy ]
+# before_action :set_tool, except: :destroy
 ### do i need a before action????
 
   #GET
   def index
     @tools = Tool.all
   end
+
   #GET
   def show
+    @tool = Tool.find(params[:id])
   end
 #   #GET
-#   def new
-#     @tool = Tool.new
-#   end
+  def new
+    @tool = Tool.new
+  end
 #   #POST
-#   def create
-#     @tool = Tool.new(tool_params)
+  # def create
+  #   @tool = Tool.new(tool_params)
 
-#     if @tool.save
-#       redirect_to @tool, notice: "Your tool was successfully added!"
-#     else
-#       render :new, status: :unprocessable_entity
-#     end
-#   end
+  #   if @tool.save
+  #     redirect_to @tool, notice: "Your tool was successfully added!"
+  #   else
+  #     render :new, status: :unprocessable_entity
+  #   end
+  # end
 #   #GET
 #   def edit
 #   end

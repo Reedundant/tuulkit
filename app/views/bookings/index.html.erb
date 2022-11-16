@@ -1,0 +1,7 @@
+<h1>🏷 Your requested tools to rent...</h1>
+
+<ul>
+  <% @bookings.each do |booking| %>
+    <li><%= link_to booking.tool.name, booking_path(booking) %> - pending...</li>
+  <% end %>
+</ul>
