@@ -1,0 +1,12 @@
+<h1>Edit Tool</h1>
+
+<%= simple_form_for @tool do |f| %>
+  <%= f.input :name, as: :text %>
+  <%= f.input :tool_type, as: :text %>
+  <%= f.input :price, as: :integer %>
+  <%= f.input :description, as: :text %>
+  <%= f.input :user_id %>
+  <%= f.input :location, as: :text%>
+  <%# t.index ["user_id"], name: "index_tools_on_user_id" %>
+  <%= f.submit 'Submit', class: 'btn btn-secondary' %>
+<% end %>
