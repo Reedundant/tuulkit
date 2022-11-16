@@ -1,11 +1,12 @@
 class ToolsController < ApplicationController
-  # before_action :set_tool, except: :destroy
+# before_action :set_tool, except: :destroy
 ### do i need a before action????
 
   #GET
   def index
     @tools = Tool.all
   end
+
   #GET
   def show
     @tool = Tool.find(params[:id])
