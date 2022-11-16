@@ -4,9 +4,8 @@ class BookingsController < ApplicationController
   end
 
   def show
-    @tool = Tool.find(params[:tool_id])
     @booking = Booking.find(params[:id])
-    @booking.tool = @booking
+    @tool = @booking.tool
   end
 
   def new
@@ -35,6 +34,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:starting_date, :end_date, :status)
+    params.require(:booking).permit(:starting_date, :end_date)
   end
 end
