@@ -1,12 +1,11 @@
 class ToolsController < ApplicationController
 # before_action :set_tool, except: :destroy
-  skip_before_action :authenticate_user!, only: %i[index show]
+  # skip_before_action :authenticate_user!, only: %i[index show]
 
   #GET
   def index
     @tools = Tool.all
   end
-
   #GET
   def show
     @tool = Tool.find(params[:id])
@@ -43,9 +42,9 @@ class ToolsController < ApplicationController
   end
 
   def destroy
-    tool = Tool.find(params[:id])
-    tool.destroy
-    redirect_to tools_path, notice: "Tool was successfully removed."
+    @tool = Tool.find(params[:id])
+    @tool.destroy
+    redirect_to tools_path, status: :see_other, notice: "Tool was successfully removed."
   end
 
   # def my_tools ##view all tools that belong to owner??
