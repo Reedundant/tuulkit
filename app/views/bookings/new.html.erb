@@ -1,7 +1,10 @@
 <h1>🧰 Request to add <%= @tool.name %> to your Toolbox</h1>
 
-<%= simple_form_for @new_booking do |f| %>
+<%# Nested form!!! 🔴 %>
+<%= simple_form_for [@tool, @booking] do |f| %>
   <%= f.input :starting_date %>
   <%= f.input :end_date %>
   <%= f.submit %>
 <% end %>
+
+<%= link_to "Cancel", bookings_path %>
