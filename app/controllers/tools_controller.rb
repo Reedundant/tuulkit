@@ -36,10 +36,10 @@ class ToolsController < ApplicationController
 #     end
 #   end
 
-#   def destroy
-#     tool.destroy
-#     redirect_to tools_url, notice: "Tool was successfully removed."
-#   end
+  def destroy
+    tool.destroy
+    redirect_to tools_url, notice: "Tool was successfully removed."
+  end
 
 #   def my_tools ##view all tools that belong to owner??
 #   end
