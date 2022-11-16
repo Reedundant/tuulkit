@@ -4,6 +4,11 @@
   <% @bookings.each do |booking| %>
     <li>
     <%= link_to booking.tool.name, booking_path(booking) %> - pending...
+     - <%= link_to "Cancel Booking",
+      booking_path(booking),
+      data: { turbo_method: :delete, turbo_confirm: "🛠 Are you sure you want to cancel this booking?"},
+      :style=>'font-size: 0.8rem; color: #d66767; text-decoration: none; padding-left: 0.5rem;'
+    %>
     </li>
   <% end %>
 </ul>
