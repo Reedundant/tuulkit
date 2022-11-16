@@ -2,6 +2,8 @@
 
 <ul>
   <% @bookings.each do |booking| %>
-    <li><%= link_to booking.tool.name, booking_path(booking) %> - pending...</li>
+    <li>
+    <%= link_to booking.tool.name, booking_path(booking) %> - pending...
+    </li>
   <% end %>
 </ul>

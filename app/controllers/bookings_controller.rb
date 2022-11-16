@@ -26,12 +26,13 @@ class BookingsController < ApplicationController
   end
 
   def destroy
+    # raise
+
     @booking = Booking.find(params[:id])
 
     @booking.destroy
-    # raise
 
-    redirect_to bookings_path(@booking.tool), status: :see_other
+    redirect_to bookings_path, status: :see_other
   end
 
   private
