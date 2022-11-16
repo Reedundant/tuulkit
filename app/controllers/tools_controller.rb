@@ -6,6 +6,7 @@ class ToolsController < ApplicationController
   def index
     @tools = Tool.all
   end
+
   #GET
   def show
     @tool = Tool.find(params[:id])
