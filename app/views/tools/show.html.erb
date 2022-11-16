@@ -4,7 +4,7 @@
 
 <p><%= link_to "Back to tools", tools_path %></p>
 
-<p><%= link_to "Delete tool", @tool, method: :delete %></p>
+<p><%= link_to "Delete tool", tools_path(@tool), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
 
 <p><%= link_to "Edit tool details", edit_tool_path(@tool) %></p>
 
