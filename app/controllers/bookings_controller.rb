@@ -10,33 +10,34 @@ class BookingsController < ApplicationController
 
   def new
     @tool = Tool.find(params[:tool_id]) # grab id
-    @new_booking = Booking.new
+    @booking = Booking.new
   end
 
   def create
-    @tool = Tool.find(params[:tool_id]) # find unique tool
     @booking = Booking.new(booking_params)
-    raise
-    # Why is the tool_id not appearing in the params?
-    @booking.tool = @tool
+    @booking.tool_id = params[:tool_id]
+    @booking.user = current_user
 
     if @booking.save
-      redirect_to bookings_path(@tool)
-      raise
+      redirect_to bookings_path(@booking.tool)
     else
       render :new, status: :unprocessable_entity
     end
   end
 
   def destroy
+    # raise
+
     @booking = Booking.find(params[:id])
+
     @booking.destroy
+
     redirect_to bookings_path, status: :see_other
   end
 
   private
 
   def booking_params
-    params.require(:booking).permit(:starting_date, :end_date, :tool_id)
+    params.require(:booking).permit(:starting_date, :end_date, :tool_id, :user_id)
   end
 end

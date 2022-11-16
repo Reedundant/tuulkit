@@ -19,7 +19,7 @@
 <p style="color: gray;">Pending</p>
 
  <%= link_to "Cancel booking",
-      bookings_path,
+      booking_path(@booking),
       data: { turbo_method: :delete, turbo_confirm: "🛠 Are you sure you want to cancel this booking?" }
     %>
 
