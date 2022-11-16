@@ -5,18 +5,17 @@ class BookingsController < ApplicationController
 
   def show
     @booking = Booking.find(params[:id])
-    @tool = @booking.tool
+    @tool = @booking.tool # grabs tool_id
   end
 
   def new
-    @tool = Tool.find(params[:tool_id])
     @booking = Booking.new
   end
 
   def create
     @tool = Tool.find(params[:tool_id]) # find unique tool
     @booking = Booking.new(booking_param)
-    @booking.tool = @booking
+    @tool.tool = @booking
 
     if @booking.save
       redirect_to bookings_path(@tool)
