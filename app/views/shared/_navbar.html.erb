@@ -5,14 +5,16 @@
     </a>
     <div class="search">
       <form action="#" class="d-flex">
-          <input type="text"
+          <input type="search" 
+              class="form-control border-end-0 border"
+              id="example-search-input"
               placeholder=" Search Tools"
               name="search" class="searchbar">
-          <button>
-              <i class="fa fa-search"
-                  style="font-size: 18px;">
-              </i>
-          </button>
+              <div class="input-group-append">
+                    <button class="btn btn-outline-secondary bg-white border-start-0 border-bottom-0 border ms-n5" type="button">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
       </form>
    </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,10 +29,6 @@
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "My Tools", "#", class: "dropdown-item" %>
               <%= link_to "My Booking", "#", class: "dropdown-item" %>
-              <%# Needs path for viewing own profile %>
-              <%= link_to "View profile", "#", class: "dropdown-item" %>
-              <%# Needs path for editing own profile %>
-              <%= link_to "Edit profile", "#", class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
           </li>
