@@ -1,6 +1,6 @@
 .card-trip {
     overflow: hidden;
-    background: (255, 255, 255);
+    background: rgb(255, 255, 255);
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     width: 4000px;
   }
@@ -59,9 +59,10 @@
     // color: var(--bs-link-color);
     // text-decoration: underline;
     margin: 10px;
+    // display: flex;
 }
 
-.btn-danger {
+.book-button {
   color: white;
   border: 1px solid #4A4A4A;
   padding: 8px 24px;
@@ -70,7 +71,11 @@
   font-weight: lighter;
   opacity: 0.6;
   transition: opacity 0.3s ease;
-  margin: 0;
+ 
+}
+
+.book-button a {
+  text-decoration: none !important;
 }
 
 .back-button {

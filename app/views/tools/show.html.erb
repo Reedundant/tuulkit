@@ -1,12 +1,11 @@
 <div class="container">
     <div class="card-trip">
         <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-        <div class="card-trip-infos"></div>
         <div class="card-info">
             <h2><%= @tool.name %></h2>
         <div class="card-trip-pricing">
             <h3>¥99.99</h3>
-            <%= link_to "Book this tool", new_tool_booking_path(@tool), class:"btn btn-danger"%></div>
+            <%= link_to "Book this tool", new_tool_booking_path(@tool), class:"book-button"%></div>
         </div>
     </div>
     <div class="descrip"
