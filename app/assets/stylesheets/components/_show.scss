@@ -1,7 +1,8 @@
 .card-trip {
     overflow: hidden;
-    background: rgb(223, 196, 196);
+    background: rgb(255, 255, 255);
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    width: 4000px;
   }
   
   .card-trip > img {
@@ -13,7 +14,13 @@
   .card-trip h2 {
     font-size: 50px;
     font-weight: bold;
-    margin: 0;
+    font-family: 'Roboto Flex', sans-serif;
+  }
+
+  .card-trip h3 {
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Roboto Flex', sans-serif;
   }
   
   .card-trip p {
@@ -39,5 +46,18 @@
   }
 
   .container {
-    max-width: 500px;
+    display: flex;
+    padding-top: 40px;
   }
+ 
+  .descrip {
+  padding-left: 50px;
+  }
+
+  .card-info {
+    // color: var(--bs-link-color);
+    // text-decoration: underline;
+    margin: 10px;
+}
+
+
