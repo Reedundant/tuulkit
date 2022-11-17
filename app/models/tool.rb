@@ -5,6 +5,6 @@ class Tool < ApplicationRecord
 
   validates :name, :tool_type, :price, :description, :location, presence: true
 
-  geocoded_by :address
-  after_validation :geocode, if: :will_save_change_to_address?
+  geocoded_by :location # Tells geocode where to find the object's address
+  after_validation :geocode, if: :will_save_change_to_address? # tells geocode, "if there was a change saves to the address, pls update and save the address"
 end
