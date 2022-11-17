@@ -3,9 +3,9 @@ class Tool < ApplicationRecord
   # has_many :users
   has_many :bookings, dependent: :destroy
 
-  validates :name, :tool_type, :price, :description, :location, presence: true
-
   has_one_attached :photo
+
+  validates :name, :tool_type, :price, :description, :location, :photo, presence: true
 
   # Geocode
   geocoded_by :location

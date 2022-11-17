@@ -22,7 +22,8 @@
 </div>
 
 <%# Cloudinary %>
-<%= cl_image_tag @tool.photo.key, height: 300, width: 400, crop: :fill %>
+<%= cl_image_path @tool.photo.key.nil? ? "../assets/images/helmet.png" : @tool.photo.key %>
+
 
 <%# 🗺 Mapbox %>
 <div id="map"
