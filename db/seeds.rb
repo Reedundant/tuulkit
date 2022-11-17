@@ -39,7 +39,7 @@ tool1 = Tool.create(
   tool_type: "Power Tools",
   price: 40.50,
   description: "Complete tasks with ease with this Craftsman finishing sander. With a 2 amp motor, it gives you up to 13,000 orbits per minute (OPM). This electric finishing sander has a dust-sealed switch to improve its durability. The onboard dust collection system improves user comfort. This versatile high speed sander performs well in surface preparation, paint stripping and varnish removal applications.",
-  location: "4221 Papineau Avenue, Montreal",
+  location: "460 Villeneuve, Montreal",
   user: user1
 )
 
@@ -69,7 +69,7 @@ tool4 = Tool.create(
   tool_type: "Hand Tools",
   price: 70.00,
   description: "This Craftsman mechanics tool set offers a variety of tools and accessories that will help you accomplish all your projects. With 2 ratchet wrenches (3/8 inch and 1/2 inch), 2 extensions, as well as a wide range of sockets, bits, hexagonal keys and adapters, you will get your money's worth! Includes a blow moulded plastic case. Backed by a lifetime warranty.",
-  location: "420 Milton Street, Montreal",
+  location: "159 Villeneuve Ouest, Montreal",
   user: user1
 )
 
