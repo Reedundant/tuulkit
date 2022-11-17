@@ -39,7 +39,7 @@ tool1 = Tool.create(
   tool_type: "Power Tools",
   price: 40.50,
   description: "Complete tasks with ease with this Craftsman finishing sander. With a 2 amp motor, it gives you up to 13,000 orbits per minute (OPM). This electric finishing sander has a dust-sealed switch to improve its durability. The onboard dust collection system improves user comfort. This versatile high speed sander performs well in surface preparation, paint stripping and varnish removal applications.",
-  location: "Montreal, QC",
+  location: "4221 Papineau Avenue, Montreal",
   user: user1
 )
 
@@ -49,7 +49,7 @@ tool2 = Tool.create(
   tool_type: "Air Tools",
   price: 55.00,
   description: "Inflate inner tubes, tires and air mattresses with ease using the Craftsman electric inflator. Set the desired PSI on the digital gauge and the unit shuts off automatically when this level of pressure is reached. It plugs into an AC outlet, a 12-volt car adapter or runs on a 20-volt battery (not included) for use at home or on the road. A handle makes the Craftsman cordless inflator conveniently portable.",
-  location: "Montreal, QC",
+  location: "5333 rue Casgrain, Montreal",
   user: user1
 )
 
@@ -59,7 +59,7 @@ tool3 = Tool.create(
   tool_type: "Hand Tools",
   price: 20.00,
   description: "Spring ring clamp set with external and internal 3-piece tips. The heat treated chromium-molybdenum steel clamp offers increased durability and extended service life. The insulating vinyl handles are comfortable and guarantee a solid grip.",
-  location: "Montreal, QC",
+  location: "5270 Parc Avenue, Montreal",
   user: user2
 )
 
@@ -69,7 +69,7 @@ tool4 = Tool.create(
   tool_type: "Hand Tools",
   price: 70.00,
   description: "This Craftsman mechanics tool set offers a variety of tools and accessories that will help you accomplish all your projects. With 2 ratchet wrenches (3/8 inch and 1/2 inch), 2 extensions, as well as a wide range of sockets, bits, hexagonal keys and adapters, you will get your money's worth! Includes a blow moulded plastic case. Backed by a lifetime warranty.",
-  location: "Montreal, QC",
+  location: "1021 Jean-Talon E., Montreal",
   user: user1
 )
 
@@ -79,7 +79,7 @@ tool5 = Tool.create(
   tool_type: "Welding & Soldering",
   price: 100.00,
   description: "Easy to operate - Full range 40-225 amp selector switch quickly sets the welding current and ensures a uniform arc each and every time you weld",
-  location: "Montreal, QC",
+  location: "1030 Jean-Talon E., Montreal",
   user: user2
 )
 
