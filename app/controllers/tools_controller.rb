@@ -19,7 +19,7 @@ class ToolsController < ApplicationController
     @tool = Tool.new(tool_params)
 
     if @tool.save
-      redirect_to @tool, notice: "Your tool was successfully added!"
+      redirect_to @tools, notice: "Your tool was successfully added!"
     else
       render :new, status: :unprocessable_entity
     end
