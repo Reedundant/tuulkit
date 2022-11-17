@@ -1,22 +1,26 @@
 <div class="navbar sticky-top navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid d-flex">
-    <a class="navbar-brand" href="#">
-      <img src="https://cdn-icons-png.flaticon.com/512/8934/8934238.png" link_to "/" />
+    <a class="navbar-brand" href="/">
+      <img src="https://cdn-icons-png.flaticon.com/512/8934/8934238.png" />
     </a>
+
     <div class="search">
-      <form action="#" class="d-flex">
-          <input type="search"
-              class="form-control border-end-0 border"
-              id="example-search-input"
-              placeholder=" Search Tools"
-              name="search" class="searchbar">
-              <div class="input-group-append">
-                    <button class="btn btn-outline-secondary" type="button">
-                        <i class="fa fa-search"></i>
-                    </button>
-                </div>
-      </form>
+      <%= form_with url: tools_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control border-end-0 border searchbar",
+          id: "example-search-input",
+          placeholder: "Search Tools"
+
+        %>
+        <div class="input-group-append">
+           <%= button_tag(type: "submit", class: "btn btn-outline-secondary") do %>
+              <i class="fa fa-search"></i>
+           <% end %>
+        </div>
+      <% end %>
    </div>
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -25,9 +29,9 @@
       <ul class="navbar-nav me-auto">
 
           <li class="nav-item dropdown">
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <%= image_tag "helmet.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "My Tools", tools_path, class: "dropdown-item" %>
+              <%= link_to "My Tools", my_tools_path, class: "dropdown-item" %>
               <%= link_to "My Booking", bookings_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>

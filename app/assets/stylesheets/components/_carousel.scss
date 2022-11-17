@@ -1,7 +1,7 @@
 .card-category {
   background-size: cover;
   background-position: center;
-  width: 150px;
+  width: 200px;
   height: 200px;
   display: flex;
   flex-direction: column;
@@ -13,11 +13,11 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  margin: 10px;
+  margin: 8px;
 }
 
 .card-holder {
-width: 100%;
+width: 100vw;
 padding: 10px;
 display: flex;
 overflow-x: scroll;
@@ -25,10 +25,19 @@ overflow-x: scroll;
 }
 
 .card-info {
-font-size: 15px;
 padding: 10px;
+border: 5px;
+display: flex;
+width: 180px;
 }
 
 .card-info ul {
-padding-left: 12px;
+// padding-left: 12px;
+font-size: small;
+color: black;
+text-align:center;
+list-style: none;
+  a {
+      text-decoration: none;
+    }
 }

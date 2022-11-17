@@ -1,40 +1,56 @@
 class ToolsController < ApplicationController
-# before_action :set_tool, except: :destroy
+  # before_action :set_tool, except: :destroy
   skip_before_action :authenticate_user!, only: %i[index show]
 
-  #GET
+  # GET
   def index
-    @tools = Tool.all
+    if params[:query].present?
+      @tools = Tool.search_by_name_tool_type_and_location(params[:query])
+    else
+      @tools = Tool.all
+    end
+  
+    @markers = @tools.geocoded.map do |tool|
+      {
+        lat: tool.latitude,
+        lng: tool.longitude
+      }
+    end
   end
 
-  #GET
+  # GET
   def show
     @tool = Tool.find(params[:id])
+
+    # Geocoder: provides coordinates for all our tools instances
+    @markers = [lat: @tool.latitude, lng: @tool.longitude]
   end
-#   #GET
+
+  # GET
   def new
     @tool = Tool.new
   end
-#   #POST
+
+  # POST
   def create
     @tool = Tool.new(tool_params)
-
+    @tool.user = current_user
     if @tool.save
-      redirect_to @tool, notice: "Your tool was successfully added!"
+      redirect_to my_tools_path, notice: "Your tool was successfully added!"
     else
       render :new, status: :unprocessable_entity
     end
   end
-#   #GET
+
+  # GET
   def edit
     @tool = Tool.find(params[:id])
   end
 
-
-
-  #PATCH
+  # PATCH
   def update
-      @tool = Tool.find(params[:id])
+    @tool = Tool.find(params[:id])
+    @tool.user = current_user
     if @tool.update(tool_params)
       redirect_to @tool, notice: "Your tool was successfully updated"
     else
@@ -42,14 +58,26 @@ class ToolsController < ApplicationController
     end
   end
 
+
   def destroy
     @tool = Tool.find(params[:id])
+
     @tool.destroy
-    redirect_to tools_path, status: :see_other, notice: "Tool was successfully removed."
+    redirect_to my_tools_path, notice: "Your tool was successfully removed.", status: :see_other
   end
 
-  # def my_tools ##view all tools that belong to owner??
-  # end
+
+
+
+
+
+    # @tool = Tool.find(params[:id])
+    # @tool.destroy!
+    # redirect_to tools_path, status: :see_other, notice: "Your tool was successfully removed."
+
+  def my_tools
+    @my_tools = Tool.where(user: current_user)
+  end
 
   private
 
