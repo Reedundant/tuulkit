@@ -49,7 +49,7 @@ tool2 = Tool.create(
   tool_type: "Air Tools",
   price: 55.00,
   description: "Inflate inner tubes, tires and air mattresses with ease using the Craftsman electric inflator. Set the desired PSI on the digital gauge and the unit shuts off automatically when this level of pressure is reached. It plugs into an AC outlet, a 12-volt car adapter or runs on a 20-volt battery (not included) for use at home or on the road. A handle makes the Craftsman cordless inflator conveniently portable.",
-  location: "5333 rue Casgrain, Montreal",
+  location: "4890 Esplanade Ave, Montreal",
   user: user1
 )
 
@@ -59,7 +59,7 @@ tool3 = Tool.create(
   tool_type: "Hand Tools",
   price: 20.00,
   description: "Spring ring clamp set with external and internal 3-piece tips. The heat treated chromium-molybdenum steel clamp offers increased durability and extended service life. The insulating vinyl handles are comfortable and guarantee a solid grip.",
-  location: "5270 Parc Avenue, Montreal",
+  location: "3570 Durocher, Montreal",
   user: user2
 )
 
@@ -69,7 +69,7 @@ tool4 = Tool.create(
   tool_type: "Hand Tools",
   price: 70.00,
   description: "This Craftsman mechanics tool set offers a variety of tools and accessories that will help you accomplish all your projects. With 2 ratchet wrenches (3/8 inch and 1/2 inch), 2 extensions, as well as a wide range of sockets, bits, hexagonal keys and adapters, you will get your money's worth! Includes a blow moulded plastic case. Backed by a lifetime warranty.",
-  location: "1021 Jean-Talon E., Montreal",
+  location: "420 Milton Street, Montreal",
   user: user1
 )
 
@@ -79,7 +79,7 @@ tool5 = Tool.create(
   tool_type: "Welding & Soldering",
   price: 100.00,
   description: "Easy to operate - Full range 40-225 amp selector switch quickly sets the welding current and ensures a uniform arc each and every time you weld",
-  location: "1030 Jean-Talon E., Montreal",
+  location: "1030 Jeanne-Mance, Montreal",
   user: user2
 )
 
