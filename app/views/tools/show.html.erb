@@ -21,6 +21,9 @@
     <%= link_to "Book this tool",  new_tool_booking_path(@tool) %>
 </div>
 
+<%# Cloudinary %>
+<%= cl_image_tag @tool.photo.key, height: 300, width: 400, crop: :fill %>
+
 <%# 🗺 Mapbox %>
 <div id="map"
      style="width: 100%; height: 50vh; border: 1px solid lightgray; border-radius: 5px;"
@@ -29,4 +32,3 @@
      data-map-markers-value="<%= @markers.to_json %>"
 >
 </div>
-
