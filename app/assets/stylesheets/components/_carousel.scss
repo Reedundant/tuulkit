@@ -26,12 +26,18 @@ overflow-x: scroll;
 
 .card-info {
 padding: 10px;
+border: 5px;
 display: flex;
 width: 180px;
 }
 
 .card-info ul {
-padding-left: 12px;
+// padding-left: 12px;
 font-size: small;
 color: black;
+text-align:center;
+list-style: none;
+  a {
+      text-decoration: none;
+    }
 }
