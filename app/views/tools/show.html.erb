@@ -10,10 +10,10 @@
               <h2 class="card-trip-pricing">¥99.99</h2>
               <img src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fstatic.vecteezy.com%2Fsystem%2Fresources%2Fpreviews%2F002%2F300%2F792%2Foriginal%2Fvegan-icon-bio-ecology-organic-logos-label-tag-green-leaf-free-vector.jpg&imgrefurl=https%3A%2F%2Fwww.vecteezy.com%2Ffree-vector%2Fvegan-logo&tbnid=m_ugQDpFqjqqxM&vet=12ahUKEwj8gNHau7P7AhXgsXIEHV31BJUQMygAegUIARDWAQ..i&docid=id_ZdYNJ1_8FHM&w=1920&h=1920&q=vegan%20logo%20icon&ved=2ahUKEwj8gNHau7P7AhXgsXIEHV31BJUQMygAegUIARDWAQ" class="card-trip-user avatar-bordered" />
       </div>
+
 </div>
 
-<p><%= @tool.description %></p>
-<div class="container">
+<div>
   <p><%= link_to "Back to tools", tools_path %></p>
 
   <p><%= link_to "Deleted tool", tool_path(@tool), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
