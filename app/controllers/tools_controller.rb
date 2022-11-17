@@ -50,9 +50,9 @@ class ToolsController < ApplicationController
 
   def destroy
     @tool = Tool.find(params[:id])
-    @tool = current_user
-    @tool.destroy(t)
-    redirect_to @tool, notice: "Your tool was successfully removed."
+
+    @tool.destroy
+    redirect_to my_tools_path, notice: "Your tool was successfully removed.", status: :see_other
   end
 
 
