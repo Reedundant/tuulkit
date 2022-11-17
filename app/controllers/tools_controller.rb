@@ -1,21 +1,27 @@
 class ToolsController < ApplicationController
-# before_action :set_tool, except: :destroy
+  # before_action :set_tool, except: :destroy
   skip_before_action :authenticate_user!, only: %i[index show]
 
-  #GET
+  # GET
   def index
     @tools = Tool.all
+
   end
 
-  #GET
+  # GET
   def show
     @tool = Tool.find(params[:id])
+
+    # Geocoder: provides coordinates for all our tools instances
+    @markers = [lat: @tool.latitude, lng: @tool.longitude]
   end
-#   #GET
+
+  # GET
   def new
     @tool = Tool.new
   end
-#   #POST
+
+  # POST
   def create
     @tool = Tool.new(tool_params)
 
@@ -25,16 +31,16 @@ class ToolsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
-#   #GET
+
+  # GET
   def edit
     @tool = Tool.find(params[:id])
   end
 
-
-
-  #PATCH
+  # PATCH
   def update
-      @tool = Tool.find(params[:id])
+    @tool = Tool.find(params[:id])
+
     if @tool.update(tool_params)
       redirect_to @tool, notice: "Your tool was successfully updated"
     else
