@@ -5,6 +5,15 @@ class Tool < ApplicationRecord
 
   validates :name, :tool_type, :price, :description, :location, presence: true
 
-  geocoded_by :location # Tells geocode where to find the object's address
-  after_validation :geocode, if: :will_save_change_to_location? # tells geocode, "if there was a change saves to the address, pls update and save the address"
+  # Geocode
+  geocoded_by :location
+  after_validation :geocode, if: :will_save_change_to_location?
+
+  # PG Search
+  include PgSearch::Model
+  pg_search_scope :search_by_name_tool_type_and_location, # Name of our scope
+    against: [ :name, :tool_type, :location ],
+    using: {
+      tsearch: { prefix: true }
+    }
 end
