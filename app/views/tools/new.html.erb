@@ -6,6 +6,9 @@
   <%= f.input :price, as: :integer %>
   <%= f.input :description, as: :text %>
   <%= f.input :location, as: :text%>
+  <%# upload pic %>
+  <%= f.input :photo, as: :file %>
+
   <%= f.submit 'Submit', class: 'btn btn-secondary' %>
 <% end %>
 
