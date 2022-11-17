@@ -4,18 +4,22 @@
         <div class="card-trip-infos"></div>
         <div class="card-info">
             <h2><%= @tool.name %></h2>
-            <h3 class="card-trip-pricing">¥99.99</h3>
-            <p><%= link_to "Back to tools", tools_path %></p>
-            
-            <p><%= link_to "Deleted tool", tool_path(@tool), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
-            
-            <p><%= link_to "Edit tool details", edit_tool_path(@tool) %></p>
-            <%# Link to request to book a tool %>
-            <%= link_to "Book this tool", new_tool_booking_path(@tool), {:style=>'color: gray;'}%>
+        <div class="card-trip-pricing">
+            <h3>¥99.99</h3>
+            <%= link_to "Book this tool", new_tool_booking_path(@tool), class:"btn btn-danger"%></div>
         </div>
-</div>
-<div class="descrip"
-    <p><%= @tool.description %></p>
+    </div>
+    <div class="descrip"
+        <p><%= @tool.description %></p>
+    </div>
 </div>
 
+
+<div class="back-button">
+    <p><%= link_to "Back to tools", tools_path %></p>
+
+    <p><%= link_to "Deleted tool", tool_path(@tool), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
+
+    <p><%= link_to "Edit tool details", edit_tool_path(@tool) %></p>
+</div>
 

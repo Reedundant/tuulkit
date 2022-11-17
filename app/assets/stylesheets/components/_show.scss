@@ -1,6 +1,6 @@
 .card-trip {
     overflow: hidden;
-    background: rgb(255, 255, 255);
+    background: (255, 255, 255);
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     width: 4000px;
   }
@@ -12,9 +12,10 @@
   }
   
   .card-trip h2 {
-    font-size: 50px;
+    font-size: 30px;
     font-weight: bold;
     font-family: 'Roboto Flex', sans-serif;
+    text-align: center;
   }
 
   .card-trip h3 {
@@ -31,7 +32,7 @@
   
   
   .card-trip .card-trip-infos {
-    padding: 16px;
+    // padding: 16px;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -60,4 +61,25 @@
     margin: 10px;
 }
 
+.btn-danger {
+  color: white;
+  border: 1px solid #4A4A4A;
+  padding: 8px 24px;
+  border-radius: 50px;
+  background-color: rgb(141, 8, 8);
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  margin: 0;
+}
 
+.back-button {
+  padding-top: 30px;
+  padding-left: 100px;
+}
+
+
+.card-trip-pricing {
+  display: flex;
+  justify-content: space-between;
+}
