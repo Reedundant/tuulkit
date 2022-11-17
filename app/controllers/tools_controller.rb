@@ -6,7 +6,7 @@ class ToolsController < ApplicationController
   def index
     @tools = Tool.all
 
-    # Mapbox
+    # Geocoder
     # Provides coordinates for all our tools instances
     @markers = @tools.geocoded.map do |tool|
       {
