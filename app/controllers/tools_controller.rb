@@ -48,8 +48,9 @@ class ToolsController < ApplicationController
     redirect_to tools_path, status: :see_other, notice: "Tool was successfully removed."
   end
 
-  # def my_tools ##view all tools that belong to owner??
-  # end
+  def my_tools
+    @my_tools = Tool.where(user: current_user)
+  end
 
   private
 
