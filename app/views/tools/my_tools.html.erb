@@ -1,1 +1,14 @@
 <h1>My tools for rent</h1>
+
+<ul class="list-unstyled">
+  <% @my_tools.each do |tool| %>
+    <li>
+    <%= link_to my_tools.tool.name, my_tools_path(my_tools) %>
+     - <%= link_to "Cancel Booking",
+      booking_path(booking),
+      data: { turbo_method: :delete, turbo_confirm: "🛠 Are you sure you want to cancel this booking?"},
+      :style=>'font-size: 0.8rem; color: #d66767; text-decoration: none; padding-left: 0.5rem;'
+    %>
+    </li>
+  <% end %>
+</ul>
