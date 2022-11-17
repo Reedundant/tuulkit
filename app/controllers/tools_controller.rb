@@ -6,19 +6,14 @@ class ToolsController < ApplicationController
   def index
     @tools = Tool.all
 
-    # Geocoder
-    # Provides coordinates for all our tools instances
-    @markers = @tools.geocoded.map do |tool|
-      {
-        lat: tool.latitude,
-        lng: tool.longitude
-      }
-    end
   end
 
   # GET
   def show
     @tool = Tool.find(params[:id])
+
+    # Geocoder: provides coordinates for all our tools instances
+    @markers = [lat: @tool.latitude, lng: @tool.longitude]
   end
 
   # GET
