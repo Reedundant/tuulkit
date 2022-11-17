@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   end
 
   resources :bookings, only: [ :index, :show, :edit, :update, :destroy ]
+  get '/my_tools', to: 'tools#my_tools'
+
 end

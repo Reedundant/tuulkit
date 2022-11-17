@@ -26,7 +26,7 @@ class ToolsController < ApplicationController
     @tool = Tool.new(tool_params)
 
     if @tool.save
-      redirect_to @tool, notice: "Your tool was successfully added!"
+      redirect_to @tools, notice: "Your tool was successfully added!"
     else
       render :new, status: :unprocessable_entity
     end
@@ -54,8 +54,9 @@ class ToolsController < ApplicationController
     redirect_to tools_path, status: :see_other, notice: "Tool was successfully removed."
   end
 
-  # def my_tools ##view all tools that belong to owner??
-  # end
+  def my_tools
+    @my_tools = Tool.where(user: current_user)
+  end
 
   private
 
