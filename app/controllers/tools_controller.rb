@@ -5,7 +5,6 @@ class ToolsController < ApplicationController
   # GET
   def index
     @tools = Tool.all
-
   end
 
   # GET
@@ -24,9 +23,9 @@ class ToolsController < ApplicationController
   # POST
   def create
     @tool = Tool.new(tool_params)
-
+    @tool.user = current_user
     if @tool.save
-      redirect_to @tools, notice: "Your tool was successfully added!"
+      redirect_to my_tools_path, notice: "Your tool was successfully added!"
     else
       render :new, status: :unprocessable_entity
     end
@@ -40,7 +39,7 @@ class ToolsController < ApplicationController
   # PATCH
   def update
     @tool = Tool.find(params[:id])
-
+    @tool.user = current_user
     if @tool.update(tool_params)
       redirect_to @tool, notice: "Your tool was successfully updated"
     else
@@ -48,11 +47,22 @@ class ToolsController < ApplicationController
     end
   end
 
+
   def destroy
     @tool = Tool.find(params[:id])
-    @tool.destroy
-    redirect_to tools_path, status: :see_other, notice: "Tool was successfully removed."
+    @tool = current_user
+    @tool.destroy(t)
+    redirect_to @tool, notice: "Your tool was successfully removed."
   end
+
+
+
+
+
+
+    # @tool = Tool.find(params[:id])
+    # @tool.destroy!
+    # redirect_to tools_path, status: :see_other, notice: "Your tool was successfully removed."
 
   def my_tools
     @my_tools = Tool.where(user: current_user)
