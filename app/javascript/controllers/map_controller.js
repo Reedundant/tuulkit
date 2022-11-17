@@ -21,11 +21,27 @@ export default class extends Controller {
       container: this.element,
       style: "mapbox://styles/mapbox/streets-v10",
       center: [lng, lat], // Initial view
-      zoom: 15,
+      zoom: 10,
       projection: 'equalEarth'
     });
 
     this.#addMarkersToMap();
+    this.#fitMapToMarkers();
+  }
+
+  #fitMapToMarkers() {
+    const bounds = new mapboxgl.LngLatBounds()
+
+    // Sets bounds
+    this.markersValue.forEach((marker) => {
+      bounds.extend([marker.lng, marker.lat])
+    });
+
+    // Fits to bounds
+    this.map.fitBounds(bounds, {
+      padding: 50,
+      decoration: 150
+    })
   }
 
   #addMarkersToMap() {
