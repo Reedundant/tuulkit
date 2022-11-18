@@ -1,6 +1,8 @@
 <%# 🪝 I can see whether my request is approved or not %>
 <h1>🛠 <%= @tool.name %></h1>
 
+<img src="<%= cl_image_path @tool.photo.key %>" alt="image of tool listing" >
+
 <h2>$<%= @tool.price %> <span style="font-size: 1rem; color: gray;">/ per day</span></h2>
 
 <ul class="list-unstyled">
