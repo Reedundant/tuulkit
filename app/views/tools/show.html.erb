@@ -1,48 +1,22 @@
 <%= render "shared/navbar" %>
+<div class="show-master">
+    <div class="container">
+        <div class="card-trip">
+            <%= cl_image_tag @tool.photo.key %>
+            <div class="card-info">
+                <h2><%= @tool.name %></h2>
+            <div class="card-trip-pricing">
+                <h3>¥99.99</h3>
+                <a class="book-button" href="/tools/26/bookings/new">Book this tool</a></div>
+            </div>
+        </div>
+        <div class="descrip-with-map" <p="">Easy to operate - Full range 40-225 amp selector switch quickly sets the welding current and ensures a uniform arc each and every time you weld<p></p>
+            <div id="map" style="width: 100%; height: 80vh; border: 1px solid lightgray; border-radius: 5px;" data-controller="map" data-map-api-key-value="" data-map-markers-value="[{&quot;lat&quot;:45.5061987,&quot;lng&quot;:-73.5640559}]" class="mapboxgl-map"><div class="mapboxgl-canary" style="visibility: hidden;"></div><div class="mapboxgl-canvas-container mapboxgl-interactive mapboxgl-touch-drag-pan mapboxgl-touch-zoom-rotate"><canvas class="mapboxgl-canvas" tabindex="0" aria-label="Map" role="region" width="193" height="1071" style="width: 128.635px; height: 713.594px;"></canvas></div><div class="mapboxgl-control-container"><div class="mapboxgl-ctrl-top-left"></div><div class="mapboxgl-ctrl-top-right"></div><div class="mapboxgl-ctrl-bottom-left"></div><div class="mapboxgl-ctrl-bottom-right"></div></div></div>
+        </div>
+    </div>
 
-<div class="container">
-    <div class="card-trip">
-      <h2><%= @tool.name %></h2>
-      <img src="<%= cl_image_path @tool.photo.key %>" />
 
-      <div class="card-trip-infos">
-          <div>
-              <p><%= @tool.description %></p>
-          </div>
-              <h2 class="card-trip-pricing">¥99.99</h2>
-              <img src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fstatic.vecteezy.com%2Fsystem%2Fresources%2Fpreviews%2F002%2F300%2F792%2Foriginal%2Fvegan-icon-bio-ecology-organic-logos-label-tag-green-leaf-free-vector.jpg&imgrefurl=https%3A%2F%2Fwww.vecteezy.com%2Ffree-vector%2Fvegan-logo&tbnid=m_ugQDpFqjqqxM&vet=12ahUKEwj8gNHau7P7AhXgsXIEHV31BJUQMygAegUIARDWAQ..i&docid=id_ZdYNJ1_8FHM&w=1920&h=1920&q=vegan%20logo%20icon&ved=2ahUKEwj8gNHau7P7AhXgsXIEHV31BJUQMygAegUIARDWAQ" class="card-trip-user avatar-bordered" />
-      </div>
+    <div class="back-button">
+        <p><a href="/tools">Back to tools</a></p>  
+    </div>
 </div>
-
-    <%= link_to "Book this tool",  new_tool_booking_path(@tool) %>
-</div>
-
-
-
-
-<%# 🗺 Mapbox %>
-<div id="map"
-     style="width: 100%; height: 50vh; border: 1px solid lightgray; border-radius: 5px;"
-     data-controller="map"
-     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
-     data-map-markers-value="<%= @markers.to_json %>"
->
-</div>
-
-
-<%# <p><%= link_to "Deleted tool", tool_path(@tool), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-
-    <%# <p><%= link_to "Edit tool details", edit_tool_path(@tool) %>
-    <%# Link to request to book a tool %>
-    <%= link_to "Book this tool",  new_tool_booking_path(@tool) %>
-</div>
-<div class="container">
-  <div id="map"
-      style="width: 100%; height: 50vh; border: 1px solid lightgray; border-radius: 5px;"
-      data-controller="map"
-      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
-      data-map-markers-value="<%= @markers.to_json %>"
-      >
-  </div>
-</div>
-<%# 🗺 Mapbox %>
