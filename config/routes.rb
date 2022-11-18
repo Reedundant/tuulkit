@@ -14,6 +14,6 @@ Rails.application.routes.draw do
   resources :bookings, only: %i[index show edit update destroy]
   get '/my_tools', to: 'tools#my_tools', as: :my_tools
 
-  get '/accept/:id', to: 'bookings#accept', as: :accept_booking
-  get '/decline/:id', to: 'bookings#decline', as: :decline_booking
+  # get '/accept/:id', to: 'bookings#accept', as: :accept_booking
+  # get '/decline/:id', to: 'bookings#decline', as: :decline_booking
 end
