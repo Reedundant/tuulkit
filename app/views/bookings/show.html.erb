@@ -1,5 +1,8 @@
 <%# 🪝 I can see whether my request is approved or not %>
+<div class="container-fluid">
 <h1>🛠 <%= @tool.name %></h1>
+
+<img src="<%= cl_image_path @tool.photo.key %>" alt="image of tool listing" style="width: 500px; height: auto; border-radius: 10px;">
 
 <h2>$<%= @tool.price %> <span style="font-size: 1rem; color: gray;">/ per day</span></h2>
 
@@ -26,3 +29,4 @@
 <%= link_to "Back to your pending tools", bookings_path  %>
 
 <%= link_to "Back to tools", tools_path  %>
+</div>
