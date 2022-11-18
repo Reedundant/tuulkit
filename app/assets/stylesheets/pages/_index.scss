@@ -1,2 +1,22 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.index-master {
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1530124566582-a618bc2615dc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3540&q=80);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+.index-container {
+  display: flex;
+}
+
+.index-cards {
+  flex-grow: 1;
+  padding-right: 3px red;
+}
+
+.map {
+  height: 100vh;
+}

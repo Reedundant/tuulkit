@@ -5,7 +5,17 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
 # require 'faker'
+
+require "open-uri"
+
+file = URI.open("https://da.lowes.ca/webassets/images/1061196_09522085_001_l.jpg")
+file2 = URI.open("https://da.lowes.ca/webassets/images/1033802_09522258_001_l.jpg")
+file3 = URI.open("https://da.lowes.ca/webassets/images/330060138_MainImage_001_l.jpg")
+file4 = URI.open("https://da.lowes.ca/webassets/images/997803_09232304_001_l.jpg")
+file5 = URI.open("https://da.lowes.ca/webassets/images/330853938_MainImage_001_l.jpg")
+
 
 puts "Destroying all bookings..."
 Booking.destroy_all
@@ -45,6 +55,8 @@ tool1 = Tool.create(
   location: "460 Villeneuve, Montreal",
   user: user1
 )
+tool1.photo.attach(io: file, filename: "placeholder.png", content_type: "image/png")
+tool1.save
 
 # https://www.lowes.ca/product/air-inflators/craftsman-12-volt-and-120-volt-120-volt-lithium-ion-li-ion-air-inflator-power-source-battery-car-electric-1033802
 tool2 = Tool.create(
@@ -55,6 +67,8 @@ tool2 = Tool.create(
   location: "4890 Esplanade Ave, Montreal",
   user: user1
 )
+tool2.photo.attach(io: file2, filename: "placeholder2.png", content_type: "image/png")
+tool2.save
 
 # https://www.lowes.ca/product/multi-tools/hvtools-snap-ring-plier-set-330060138
 tool3 = Tool.create(
@@ -65,6 +79,8 @@ tool3 = Tool.create(
   location: "3570 Durocher, Montreal",
   user: user2
 )
+tool3.photo.attach(io: file3, filename: "placeholder3.png", content_type: "image/png")
+tool3.save
 
 # https://www.lowes.ca/product/mechanics-tool-sets/craftsman-gun-metal-81-piece-standard-sae-mechanics-tool-set-with-hard-997803
 tool4 = Tool.create(
@@ -75,6 +91,8 @@ tool4 = Tool.create(
   location: "159 Villeneuve Ouest, Montreal",
   user: user1
 )
+tool4.photo.attach(io: file4, filename: "placeholder4.png", content_type: "image/png")
+tool4.save
 
 # https://www.lowes.ca/product/welders-cutters/lincoln-electric-ac225-stick-welder-240v-225a-330853938
 tool5 = Tool.create(
@@ -85,6 +103,8 @@ tool5 = Tool.create(
   location: "1030 Jeanne-Mance, Montreal",
   user: user2
 )
+tool5.photo.attach(io: file5, filename: "placeholder5.png", content_type: "image/png")
+tool5.save
 
 tool6 = Tool.create(
   name: "Dewalt 32V Hammer Drill",

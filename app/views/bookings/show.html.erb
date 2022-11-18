@@ -1,5 +1,8 @@
 <%# 🪝 I can see whether my request is approved or not %>
+<div class="container-fluid">
 <h1>🛠 <%= @tool.name %></h1>
+
+<img src="<%= cl_image_path @tool.photo.key %>" alt="image of tool listing" style="width: 500px; height: auto; border-radius: 10px;">
 
 <h2>$<%= @tool.price %> <span style="font-size: 1rem; color: gray;">/ per day</span></h2>
 
@@ -11,8 +14,8 @@
 
 <h3>Request</h3>
 <ul class="list-unstyled">
-  <li>Start date: <%= @booking.starting_date %></li>
-  <li>End date: <%= @booking.end_date %></li>
+  <li>Start date: <%= @booking.starting_date.strftime('%a, %b %e %Y') %></li>
+  <li>End date: <%= @booking.end_date.strftime('%a, %b %e %Y')  %></li>
 </ul>
 
 <h3>Status</h3>
@@ -26,3 +29,4 @@
 <%= link_to "Back to your pending tools", bookings_path  %>
 
 <%= link_to "Back to tools", tools_path  %>
+</div>
