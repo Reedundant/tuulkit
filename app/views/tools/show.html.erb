@@ -1,7 +1,7 @@
 <div class="container">
     <div class="card-trip">
       <h2><%= @tool.name %></h2>
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+      <img src="<%= cl_image_path @tool.photo.key %>" />
 
       <div class="card-trip-infos">
           <div>
@@ -20,10 +20,6 @@
     <%# Link to request to book a tool %>
     <%= link_to "Book this tool",  new_tool_booking_path(@tool) %>
 </div>
-
-<%# Cloudinary %>
-<%= cl_image_path @tool.photo.key.nil? ? "../assets/images/helmet.png" : @tool.photo.key %>
-
 
 <%# 🗺 Mapbox %>
 <div id="map"
