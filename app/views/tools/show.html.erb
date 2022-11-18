@@ -7,7 +7,9 @@
                 <h2><%= @tool.name %></h2>
             <div class="card-trip-pricing">
                 <h3><%= @tool.price %>$</h3>
-                <a class="book-button" href="/tools/26/bookings/new">Book this tool</a></div>
+                <%= link_to 'Book this tool', new_tool_booking_path(@tool), class: 'book-button' %>
+            </div>
+
             </div>
         </div>
         <div class="descrip-with-map" <p="">Easy to operate - Full range 40-225 amp selector switch quickly sets the welding current and ensures a uniform arc each and every time you weld<p></p>
