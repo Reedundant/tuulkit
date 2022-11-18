@@ -1,6 +1,7 @@
 <%= render "shared/navbar" %>
-
-<h1>Edit Tool</h1>
+<div class="container-fluid mt-3" style="display: flex; justify-content:center; align-items: center;">
+<div style="width: 50%;">
+<h1 class="mb-3 mt-3">Edit Tool</h1>
 
 <%= simple_form_for @tool do |f| %>
   <%= f.input :name, as: :text %>
@@ -12,3 +13,7 @@
   <%# t.index ["user_id"], name: "index_tools_on_user_id" %>
   <%= f.submit 'Submit', class: 'btn btn-secondary' %>
 <% end %>
+
+<%= link_to "Cancel", my_tools_path %>
+</div>
+</div>

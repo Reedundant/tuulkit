@@ -1,7 +1,7 @@
 <%= render "shared/navbar" %>
-
-<div class="container-fluid">
-  <h1>🧰 Request to add <%= @tool.name %> to your Toolbox</h1>
+<div class="container-fluid mt-3" style="display: flex; justify-content:center; align-items: center;">
+<div style="width: 50%;">
+  <h1 class="mb-3 mt-3">🧰 Request to add <%= @tool.name %> to your Toolbox</h1>
 
   <%= simple_form_for [@tool, @booking] do |f| %>
     <%= f.input :starting_date, html5: true %>
@@ -9,5 +9,6 @@
     <%= f.submit %>
   <% end %>
 
-  <%# <%= link_to "Cancel", tools_path %>
+  <%= link_to "Cancel", tools_path %>
+</div>
 </div>
