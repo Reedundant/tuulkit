@@ -1,5 +1,5 @@
 <div class="container-fluid">
-  <h1>🧰 Request to add <%= @tool.name %> to your Toolbox</h1>
+  <h1>🧰 Request to add <%= @booking.tool.name %> to your Toolbox</h1>
 
   <%= simple_form_for [@tool, @booking] do |f| %>
     <%= f.input :starting_date, html5: true %>
