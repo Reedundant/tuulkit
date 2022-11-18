@@ -1,0 +1,16 @@
+<div class="index-master">
+    <div class="index-card">
+        <% @tools.each do |t| %>
+        <div class="d-flex flex-column m-3">
+            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+        </div>
+        <ul>
+          <li>
+            <%=link_to t.name, tool_path(t) %>
+          </li>
+          <li>
+            <%= link_to "Book",  new_tool_booking_path(t), class:"btn btn-success"%>
+          </li>
+        </ul>
+    </div>
+  </div>
