@@ -7,3 +7,16 @@
   background-position: center;
   background-size: cover;
 }
+
+.index-container {
+  display: flex;
+}
+
+.index-cards {
+  flex-grow: 1;
+  padding-right: 3px red;
+}
+
+.map {
+  height: 100vh;
+}
