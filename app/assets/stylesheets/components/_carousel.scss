@@ -17,21 +17,24 @@
 }
 
 .card-holder {
-width: 100vw;
-padding: 10px;
-display: flex;
-overflow-x: scroll;
-// align-content: space-between;
+  width: 100vw;
+  padding: 10px;
+  display: flex;
+  overflow-x: scroll;
+  margin: rgba(0,0,0,0.5);
+  // align-content: space-between;
 }
 
-.card-info {
+.carousel-card {
 padding: 10px;
 border: 5px;
 display: flex;
 width: 180px;
+background-color:darkslategrey;
+opacity: 40%;
 }
 
-.card-info ul {
+.carousel-card ul {
 // padding-left: 12px;
 font-size: small;
 color: black;
