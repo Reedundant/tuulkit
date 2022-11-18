@@ -1,30 +1,38 @@
 .card-trip {
     overflow: hidden;
-    background: rgb(223, 196, 196);
+    background: rgb(255, 255, 255);
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    width: 4000px;
   }
   
   .card-trip > img {
-    height: 200px;
+    // max-height: 500px;
     width: 100%;
     object-fit: cover;
   }
   
   .card-trip h2 {
-    font-size: 50px;
+    font-size: 30px;
     font-weight: bold;
-    margin: 0;
+    font-family: 'Roboto Flex', sans-serif;
+    text-align: center;
+  }
+
+  .card-trip h3 {
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Roboto Flex', sans-serif;
   }
   
   .card-trip p {
     font-size: 12px;
     opacity: .7;
-    margin: 0;
+    // margin: 0;
   }
   
   
   .card-trip .card-trip-infos {
-    padding: 16px;
+    // padding: 16px;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -33,11 +41,59 @@
   
   .card-trip-infos .card-trip-user {
     position: absolute;
-    right: 16px;
+    // right: 16px;
     top: -20px;
     width: 40px;
   }
 
   .container {
-    max-width: 500px;
+    display: flex;
+    padding-top: 40px;
   }
+ 
+  .descrip-with-map {
+  padding-left: 50px;
+  color: white;
+  }
+
+  .card-info {
+    // color: var(--bs-link-color);
+    // text-decoration: underline;
+    margin: 10px;
+    // display: flex;
+}
+
+.book-button {
+  color: white;
+  border: 1px solid #4A4A4A;
+  padding: 8px 24px;
+  border-radius: 50px;
+  background-color: rgb(141, 8, 8);
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+ 
+}
+
+.book-button a {
+  text-decoration: none !important;
+}
+
+.back-button {
+  padding-top: 30px;
+  padding-left: 100px;
+}
+
+
+.card-trip-pricing {
+  display: flex;
+  justify-content: space-between;
+}
+
+.show-master {
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?ixlib=rb-4.0.3&ixid=MnwxM[…]90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+
+}
