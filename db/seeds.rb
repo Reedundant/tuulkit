@@ -35,7 +35,7 @@ user2 = User.create(
   password: "123456"
 )
 
-# pp user1, user2
+pp user1.id, user2.id
 puts "Done generating users!"
 
 # Tool -------------------------------
@@ -101,17 +101,27 @@ tool5 = Tool.create(
 tool5.photo.attach(io: file5, filename: "placeholder5.png", content_type: "image/png")
 tool5.save
 
-dollars = (12..500).to_a.sample
-cents = (10..99).to_a.sample
-users = [user1, user2].sample
+# dollars = (12..500).to_a.sample
+# cents = (10..99).to_a.sample
+# users = [user1, user2].sample
+
+# tool6 = Tool.create(
+#   name: Faker::ElectricalComponents.electromechanical,
+#   tool_type: Faker::Construction.heavy_equipment,
+#   price: "#{dollars}.#{cents}",
+#   description: Faker::Construction.heavy_equipment,
+#   user: users
+# )
 
 tool6 = Tool.create(
-  name: Faker::Games::Minecraft.item,
-  tool_type: Faker::Construction.heavy_equipment,
-  price: "#{dollars}.#{cents}",
-  description: Faker::ElectricalComponents.electromechanical,
-  user: users.sample
+  name: "Apple",
+  tool_type: "Welding & Soldering",
+  price: 100.00,
+  description: "Rant and ensures a uniform arc each and every time you weld",
+  location: "303 Jeanne-Mance, Montreal",
+  user: user2
 )
+tool6.save
 
 pp tool6
 puts "Done generating tools!"
