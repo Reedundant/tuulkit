@@ -35,7 +35,7 @@ user2 = User.create(
   password: "123456"
 )
 
-pp user1, user2
+# pp user1, user2
 puts "Done generating users!"
 
 # Tool -------------------------------
@@ -101,8 +101,21 @@ tool5 = Tool.create(
 tool5.photo.attach(io: file5, filename: "placeholder5.png", content_type: "image/png")
 tool5.save
 
-puts "Done generating tools"
-pp tool1, tool2, tool3, tool4, tool5
+dollars = (12..500).to_a.sample
+cents = (10..99).to_a.sample
+users = [user1, user2].sample
+
+tool6 = Tool.create(
+  name: Faker::Games::Minecraft.item,
+  tool_type: Faker::Construction.heavy_equipment,
+  price: "#{dollars}.#{cents}",
+  description: Faker::ElectricalComponents.electromechanical,
+  user: users.sample
+)
+
+pp tool6
+puts "Done generating tools!"
+# pp tool1, tool2, tool3, tool4, tool5
 # name, tool_type, price, description, location
 
 # Booking -------------------------------
@@ -141,4 +154,4 @@ booking4 = Booking.create(
 )
 
 puts "Done generating bookings"
-pp booking1, booking2, booking3, booking4
+# pp booking1, booking2, booking3, booking4
