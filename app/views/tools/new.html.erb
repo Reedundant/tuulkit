@@ -1,6 +1,7 @@
 <%= render "shared/navbar" %>
-
-<h1>List your Tool</h1>
+<div class="container-fluid mt-3" style="display: flex; justify-content:center; align-items: center;">
+<div style="width: 50%;">
+<h1 class="mb-3 mt-3">List your Tool</h1>
 
 <%= simple_form_for @tool do |f| %>
   <%= f.input :name, as: :text %>
@@ -14,4 +15,6 @@
   <%= f.submit 'Submit', class: 'btn btn-secondary' %>
 <% end %>
 
-<%= link_to "My Tools", my_tools_path %>
+<%= link_to "Cancel", my_tools_path %>
+</div>
+</div>

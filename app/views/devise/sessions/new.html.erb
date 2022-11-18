@@ -1,4 +1,7 @@
-<h2>Log in</h2>
+<%= render "shared/navbar" %>
+<div class="container-fluid mt-3" style="display: flex; justify-content:center; align-items: center;">
+<div style="width: 50%;">
+<h2 class="mb-3 mt-3">Log in</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name),  data: {turbo: false}) do |f| %>
   <div class="form-inputs">
@@ -18,3 +21,5 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>
+</div>

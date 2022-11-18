@@ -7,8 +7,11 @@
     <li>
       <div style="background-color: white; width: 100% !important;" class="card-holder">
         <%# Card image div %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path booking.tool.photo.key %>)">
+
+        <div class="card-category" style="width: auto; heigth:100%;">
+          <%= cl_image_tag booking.tool.photo.key, height: 200, width: 200, crop: :fill %>
         </div>
+
 
           <div class="card-info">
             <ul class="list-unstyled text-start">
@@ -24,9 +27,9 @@
               <%# link_to 'Accept', accept_booking_path(booking) %> <%# link_to 'Decline', decline_booking_path(booking) %>
               <%# end %>
 
-              <li>
+              <%# <li>
                 <%= link_to "Edit Booking", edit_booking_path(booking) %>
-              </li>
+              <%# </li>  %>
 
               <li>
                 <%= link_to "Cancel Booking",
