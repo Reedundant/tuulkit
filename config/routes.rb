@@ -8,10 +8,13 @@ Rails.application.routes.draw do
 
   # To generate nested paths
   resources :tools do
-    resources :bookings, only: [ :new, :create ]
+    resources :bookings, only: %i[new create]
   end
 
-  resources :bookings, only: [ :index, :show, :edit, :update, :destroy ]
+  resources :bookings, only: %i[index show edit update destroy]
+
   get '/my_tools', to: 'tools#my_tools', as: :my_tools
 
+  get '/approve/:id', to: "bookings#accept", as: :accept_booking
+  get '/reject/:id', to: "bookings#reject", as: :reject_booking
 end
