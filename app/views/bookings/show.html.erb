@@ -11,8 +11,8 @@
 
 <h3>Request</h3>
 <ul class="list-unstyled">
-  <li>Start date: <%= @booking.starting_date %></li>
-  <li>End date: <%= @booking.end_date %></li>
+  <li>Start date: <%= @booking.starting_date.strftime('%a, %b %e %Y') %></li>
+  <li>End date: <%= @booking.end_date.strftime('%a, %b %e %Y')  %></li>
 </ul>
 
 <h3>Status</h3>
