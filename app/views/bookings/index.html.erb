@@ -1,48 +1,51 @@
-<%= render "shared/navbar" %>
+<div class="booking-index-master">
 
-<h1>🏷 Your requested tools to rent...</h1>
+  <%= render "shared/navbar" %>
 
-<ul class="list-unstyled">
-  <% @bookings.each do |booking| %>
-    <li>
-      <div style="background-color: white; width: 100% !important;" class="card-holder">
-        <%# Card image div %>
+  <h1>🏷 Your requested tools to rent...</h1>
 
-        <div class="card-category" style="width: auto; heigth:100%;">
-          <%= cl_image_tag booking.tool.photo.key, height: 200, width: 200, crop: :fill %>
+  <ul class="list-unstyled">
+    <% @bookings.each do |booking| %>
+      <li>
+        <div style="background-color: white; width: 100% !important;" class="card-holder">
+          <%# Card image div %>
+
+          <div class="card-category" style="width: auto; heigth:100%;">
+            <%= cl_image_tag booking.tool.photo.key, height: 200, width: 200, crop: :fill %>
+          </div>
+
+
+            <div class="card-info">
+              <ul class="list-unstyled text-start">
+                <li>
+                  <%= link_to booking.tool.name, booking_path(booking) %>
+                </li>
+
+
+                <li>
+                    <%= booking.status %>
+                </li>
+                <%# if booking.status === 'pending' %>
+                <%# link_to 'Accept', accept_booking_path(booking) %> <%# link_to 'Decline', decline_booking_path(booking) %>
+                <%# end %>
+
+                <li>
+                  <%= link_to "Edit Booking", edit_booking_path(booking) %>
+                </li>
+
+                <li>
+                  <%= link_to "Cancel Booking",
+                    booking_path(booking),
+                    data: { turbo_method: :delete, turbo_confirm: "🛠 Are you sure you want to cancel this booking?"},
+                    :style=>'font-size: 0.8rem; color: #d66767; text-decoration: none;'
+                  %>
+                </li>
+              </ul>
+          </div>
         </div>
+      </li>
+    <% end %>
+  </ul>
 
-
-          <div class="card-info">
-            <ul class="list-unstyled text-start">
-              <li>
-                <%= link_to booking.tool.name, booking_path(booking) %>
-              </li>
-
-
-              <li>
-                  <%= booking.status %>
-              </li>
-              <%# if booking.status === 'pending' %>
-              <%# link_to 'Accept', accept_booking_path(booking) %> <%# link_to 'Decline', decline_booking_path(booking) %>
-              <%# end %>
-
-              <%# <li>
-                <%= link_to "Edit Booking", edit_booking_path(booking) %>
-              <%# </li>  %>
-
-              <li>
-                <%= link_to "Cancel Booking",
-                  booking_path(booking),
-                  data: { turbo_method: :delete, turbo_confirm: "🛠 Are you sure you want to cancel this booking?"},
-                  :style=>'font-size: 0.8rem; color: #d66767; text-decoration: none;'
-                %>
-              </li>
-            </ul>
-        </div>
-      </div>
-    </li>
-  <% end %>
-</ul>
-
-<%= link_to "Back to tools", tools_path  %>
+  <%= link_to "Back to tools", tools_path  %>
+</div>
