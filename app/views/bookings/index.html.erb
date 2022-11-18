@@ -13,7 +13,19 @@
               <li>
                 <%= link_to booking.tool.name, booking_path(booking) %>
               </li>
-              <li> pending...</li>
+
+
+              <li>
+                  <%= booking.status %>
+              </li>
+              <%# if booking.status === 'pending' %>
+              <%# link_to 'Accept', accept_booking_path(booking) %> <%# link_to 'Decline', decline_booking_path(booking) %>
+              <%# end %>
+
+              <li>
+                <%= link_to "Edit Booking", edit_booking_path(booking) %>
+              </li>
+
               <li>
                 <%= link_to "Cancel Booking",
                   booking_path(booking),
